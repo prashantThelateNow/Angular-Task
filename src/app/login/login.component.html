@@ -1,0 +1,69 @@
+
+      <div class="card">
+        <div class="row align-items-center text-center">
+          <div class="col-md-12">
+            <div class="card-body">
+              <form [formGroup]="signInForm" (submit)="loginUser()">
+                <!-- <img src="assets/images/logo-dark.png" alt="" class="img-fluid mb-4"> -->
+                <img [src]="userImg" alt="" class="img-fluid mb-4 user-img">
+                <h4 class="mb-3 f-w-400">Signin</h4>
+                <div class="row justify-content-center">
+                    <div class="col-md-3">
+                        <ng-container>
+                            <div class="input-group mb-3">
+                                <!-- <div class="input-group-prepend">
+                                  <span class="input-group-text"><i class="feather icon-mail"></i></span>
+                                </div> -->
+                                <input type="email" class="form-control" placeholder="Email address" formControlName="username" autofocus>
+                              </div>
+                        </ng-container>
+                        <ng-container>
+                            <div class="input-group mb-4">
+                                <!-- <div class="input-group-prepend">
+                                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div> -->
+                                <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                              </div>
+                        </ng-container>
+                        
+                    
+                        <!-- <div class="form-group text-left mt-2">
+                            <div class="checkbox checkbox-primary d-inline">
+                                <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">
+                                <label for="checkbox-fill-a1" class="cr"> Save credentials</label>
+                            </div>
+                          </div> -->
+                          <ng-container *ngIf="signInForm.invalid">
+                            <button class="btn btn-block btn-primary mb-4" type="button" disabled>Signin</button>
+                          </ng-container>
+                          <ng-container *ngIf="!signInForm.invalid">
+                            <button *ngIf="!signing" class="btn btn-block btn-primary mb-4" type="submit">Signin</button>
+            
+                            <button *ngIf="signing" class="btn btn-block btn-primary mb-4" type="button" disabled>
+                              <div class="spinner-border spinner-border-sm" role="status">
+                                <span class="sr-only">Loading...</span>
+                              </div>
+                            </button>
+                          </ng-container>
+                          <!-- <button class="btn btn-block btn-primary mb-4" type="submit" [disabled]="signInForm.invalid">Signin
+                            &nbsp;&nbsp;&nbsp;
+                            <div *ngIf="signing" class="spinner-border spinner-border-sm" role="status">
+                              <span class="sr-only">Loading...</span>
+                            </div>
+                          </button> -->
+                          <p class="mb-2 text-muted">Forgot password? <a class="f-w-400">Reset</a></p>
+                          <p class="mb-0 text-muted">Don’t have an account? <a [routerLink]="['/registration']" class="f-w-400">Signup</a></p>
+                    </div>
+                </div>
+                
+                
+               
+                
+               
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+  
